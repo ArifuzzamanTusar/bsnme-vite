@@ -52,7 +52,7 @@ export default function Hero() {
           }}
         >
           <span style={{ display: 'inline-block', width: 28, height: 1, background: 'var(--orange)' }} />
-          NY · NJ · FL · CA · NV · TXHAHAHA
+          NY · NJ · FL · CA · NV · TX
         </motion.p>
 
         {/* H1 — word stagger */}
