@@ -1,0 +1,23 @@
+# 1. Block access to sensitive source files and folders
+RedirectMatch 404 /\.(git|env|vscode|idea|github)
+RedirectMatch 404 ^/(src|node_modules|public)/
+<FilesMatch "^\.env|package\.json|package-lock\.json|vite\.config\.js|tailwind\.config\.js|jsconfig\.json|postcss\.config\.js$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 2. Rewrite all traffic to the dist/ folder
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Check if the file/folder exists in the dist/ folder, and rewrite there
+RewriteCond %{DOCUMENT_ROOT}/dist/$1 -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/dist/$1 -d
+RewriteRule ^(.*)$ dist/$1 [L]
+
+# For SPA client-side routing (redirect non-existent paths to dist/index.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/dist/
+RewriteRule ^(.*)$ dist/index.html [L]
