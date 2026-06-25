@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block crawlers from accessing form confirmation states
+Disallow: /?submitted=true
+
+Sitemap: https://bodyshopnearme.com/sitemap.xml

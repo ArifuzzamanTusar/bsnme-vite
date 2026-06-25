@@ -1,0 +1,5 @@
+/*
+  Netlify _redirects — SPA fallback
+  All routes serve index.html so client-side routing works correctly.
+*/
+/*  /index.html  200
