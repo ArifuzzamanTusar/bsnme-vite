@@ -1,0 +1,16 @@
+{
+  "name": "BodyShopNearMe",
+  "short_name": "BSNM",
+  "description": "Free auto body shop matching — NY, NJ, FL, CA, NV, TX",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0A0A0A",
+  "theme_color": "#E85D04",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/tusar/image/upload/v1782426227/clients/bodyshop-nearme/bsnme-icon_ksxawu.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
